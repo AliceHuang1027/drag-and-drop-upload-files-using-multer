@@ -15,7 +15,7 @@ app.use(express.static(__dirname + "/public"))
 app.use(express.json())
 app.use(express.urlencoded({expended:false}))
 app.get("/",(req, res)=>{
-    res.sendFile('/views/index.html',{root:__dirname})
+    res.sendFile('index.html',{root:__dirname})
 })
 app.post("/files",upload.array('keyname'),(res,req)=>{
     if(req.files){
