@@ -15,20 +15,16 @@ app.use(express.static(__dirname + "/public"))
 app.use(express.json())
 app.use(express.urlencoded({expended:false}))
 app.get("/",(req, res)=>{
-    res.sendFile('index.html',{root:__dirname})
+    res.sendFile('/views/index.html',{root:__dirname})
 })
 app.post("/files",upload.array('keyname'),(res,req)=>{
-    if(req.file){
+    if(req.files){
         console.log("Uploading file...")
-        const filename = req.file.filename
-        const uploadStatus = 'File Uploaded Suc'
     }
-    if(!req.file){
+    if(!req.files){
         console.log("No file uploaded...")
-        const filename = "File not uploaded"
-        const uploadStatus = "File upload failed"
     }
-    res.render("index.html"›port)
+    res.render("index.html")
 })
 
 app.listen(port,()=>{
