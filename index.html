@@ -42,7 +42,7 @@ document.body.addEventListener('drop', (e) => {
 	console.log(formData)
 	fetch('/files', {
 		method: 'POST',
-		body:JSON.stringify(formData)
+		body:formData
 	}).then(r=>r.json()).then(arr=>{
 		window.location.relaod()
 })
